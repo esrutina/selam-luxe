@@ -9,6 +9,7 @@
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
     { "src": "/sections/(.*)", "dest": "/sections/$1" },
     { "src": "/includes/(.*)", "dest": "/includes/$1" },
+    { "src": "/contact.php", "dest": "/api/contact.php" },
     { "src": "/(.*)", "dest": "/api/index.php" }
   ]
 }
