@@ -9,26 +9,26 @@
         <div class="grid-3 stagger-children" id="collectionsGrid">
             <?php
             // For now, use static data. Later we'll fetch from Supabase
-            $collections = [
-                [
-                    'name' => 'Tigray Crown',
-                    'region' => 'Northern Highlands',
-                    'image' => 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&h=800&fit=crop',
-                    'price' => 45000
-                ],
-                [
-                    'name' => 'Oromo Filigree',
-                    'region' => 'Central Plateau',
-                    'image' => 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&h=800&fit=crop',
-                    'price' => 32000
-                ],
-                [
-                    'name' => 'Amhara Cross',
-                    'region' => 'Historic Route',
-                    'image' => 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&h=800&fit=crop',
-                    'price' => 28000
-                ]
-            ];
+           $collections = [
+    [
+        'name' => 'Tigray Crown',
+        'region' => 'Northern Highlands',
+        'image' => 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&h=800&fit=crop',
+        'price' => 45000
+    ],
+    [
+        'name' => 'Oromo Filigree',
+        'region' => 'Central Plateau',
+        'image' => 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&h=800&fit=crop',
+        'price' => 32000
+    ],
+    [
+        'name' => 'Amhara Cross',
+        'region' => 'Historic Route',
+        'image' => 'https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600&h=800&fit=crop',
+        'price' => 28000
+    ]
+];
             
             foreach ($collections as $item): ?>
             <article class="product-card reveal">

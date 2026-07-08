@@ -1,8 +1,8 @@
 <section class="hero" id="hero">
     <div class="hero-bg">
-        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1920&h=1080&fit=crop" 
-             alt="Handcrafted Ethiopian gold necklace on dark velvet" 
-             loading="eager">
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1920&h=1080&fit=crop" 
+     alt="Handcrafted Ethiopian gold necklace on dark velvet" 
+     loading="eager">
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">

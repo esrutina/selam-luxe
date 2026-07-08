@@ -21,9 +21,9 @@
                 <a href="#contact" class="btn-primary">Inquire Now</a>
             </div>
             <div class="featured-image reveal">
-                <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800&h=1000&fit=crop" 
-                     alt="Lalibela Cross Pendant in 22K gold" 
-                     loading="lazy">
+                <img src="https://images.unsplash.com/photo-1602173574767-37ac01994a2f?w=800&h=1000&fit=crop" 
+     alt="Lalibela Cross Pendant in 22K gold" 
+     loading="lazy">
             </div>
         </div>
     </div>
