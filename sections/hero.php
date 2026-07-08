@@ -1,6 +1,6 @@
 <section class="hero" id="hero">
     <div class="hero-bg">
-        <img src="/assets/images/hero/hero-gold-necklace.jpg" 
+        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1920&h=1080&fit=crop" 
              alt="Handcrafted Ethiopian gold necklace on dark velvet" 
              loading="eager">
     </div>

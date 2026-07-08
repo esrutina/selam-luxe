@@ -13,19 +13,19 @@
                 [
                     'name' => 'Tigray Crown',
                     'region' => 'Northern Highlands',
-                    'image' => '/assets/images/products/tigray-crown.jpg',
+                    'image' => 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&h=800&fit=crop',
                     'price' => 45000
                 ],
                 [
                     'name' => 'Oromo Filigree',
                     'region' => 'Central Plateau',
-                    'image' => '/assets/images/products/oromo-filigree.jpg',
+                    'image' => 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&h=800&fit=crop',
                     'price' => 32000
                 ],
                 [
                     'name' => 'Amhara Cross',
                     'region' => 'Historic Route',
-                    'image' => '/assets/images/products/amhara-cross.jpg',
+                    'image' => 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&h=800&fit=crop',
                     'price' => 28000
                 ]
             ];

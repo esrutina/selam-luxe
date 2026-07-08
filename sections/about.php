@@ -2,7 +2,7 @@
     <div class="container">
         <div class="about-grid grid-2">
             <div class="about-image reveal">
-                <img src="/assets/images/textures/artisan-hands.jpg" 
+                <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800&h=1000&fit=crop" 
                      alt="Ethiopian goldsmith crafting jewelry by hand" 
                      loading="lazy">
             </div>
