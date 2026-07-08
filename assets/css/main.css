@@ -1,0 +1,94 @@
+/* ============================================
+   SELAM LUXE — Design Tokens & Base Styles
+   ============================================ */
+
+:root {
+    /* Ethiopian Luxury Palette */
+    --color-charcoal: #1a1a1a;
+    --color-gold: #d4af37;
+    --color-gold-muted: #c0a060;
+    --color-parchment: #f5f0e8;
+    --color-crimson: #8b0000;
+    --color-white: #ffffff;
+    --color-text: #333333;
+    --color-text-light: #888888;
+    
+    /* Typography */
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Montserrat', -apple-system, sans-serif;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-slow: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-parchment);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography Scale */
+h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--color-charcoal);
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: 2px; }
+h2 { font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: 1px; }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+
+p {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Utility */
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: var(--space-xl) 0;
+}
+
+.text-center { text-align: center; }
+.gold-text { color: var(--color-gold); }
+.crimson-text { color: var(--color-crimson); }

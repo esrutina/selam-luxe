@@ -1,0 +1,89 @@
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Grid Utilities */
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-sm); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+
+/* Tablet */
+@media (max-width: 1024px) {
+    :root {
+        --space-xl: 5rem;
+    }
+    
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    :root {
+        --space-xl: 3rem;
+    }
+    
+    .grid-4, .grid-3 { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--color-charcoal);
+        flex-direction: column;
+        padding: var(--space-xl) var(--space-md);
+        transition: var(--transition-smooth);
+        display: flex;
+        gap: var(--space-md);
+        z-index: 100;
+    }
+    
+    .nav-links.active { right: 0; }
+    
+    .mobile-menu-btn { 
+        display: flex; 
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 101;
+    }
+    
+    .mobile-menu-btn span {
+        width: 25px;
+        height: 2px;
+        background: var(--color-gold);
+        transition: var(--transition-smooth);
+    }
+    
+    .hero-content {
+        padding: 0 var(--space-md);
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .section-padding {
+        padding: var(--space-lg) 0;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1600px;
+    }
+}
