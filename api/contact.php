@@ -3,7 +3,10 @@ declare(strict_types=1);
 header('Content-Type: application/json');
 
 require_once __DIR__ . '/../includes/functions.php';
-require_once __DIR__ . '/../includes/db-connect.php';
+
+// Read environment variables directly
+$supabaseUrl = $_ENV['SUPABASE_URL'] ?? getenv('SUPABASE_URL') ?? '';
+$supabaseKey = $_ENV['SUPABASE_ANON_KEY'] ?? getenv('SUPABASE_ANON_KEY') ?? '';
 
 $response = ['success' => false, 'message' => ''];
 
@@ -24,18 +27,38 @@ if (!$name || !$email || !$message) {
     jsonResponse($response);
 }
 
-// Insert into Supabase
-$success = $supabase->insert('contacts', [
+// Send to Supabase REST API directly
+$url = $supabaseUrl . '/rest/v1/contacts';
+
+$data = [
     'name' => $name,
     'email' => $email,
     'message' => $message
+];
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'apikey: ' . $supabaseKey,
+    'Authorization: Bearer ' . $supabaseKey,
+    'Content-Type: application/json',
+    'Prefer: return=minimal'
 ]);
 
-if ($success) {
-    $response['success'] = true;
-    $response['message'] = 'Thank you. We will contact you shortly.';
-} else {
-    $response['message'] = 'Unable to process your request. Please try again.';
-}
+$response = curl_exec($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
 
-jsonResponse($response);
+if ($httpCode === 201) {
+    jsonResponse([
+        'success' => true,
+        'message' => 'Thank you. We will contact you shortly.'
+    ]);
+} else {
+    jsonResponse([
+        'success' => false,
+        'message' => 'Unable to process your request. Please try again.'
+    ]);
+}
