@@ -1,8 +1,11 @@
 <?php
 declare(strict_types=1);
-header('Content-Type: application/json');
 
-require_once __DIR__ . '/../includes/functions.php';
+// Suppress deprecation warnings
+error_reporting(E_ALL & ~E_DEPRECATED);
+ini_set('display_errors', '0');
+
+header('Content-Type: application/json');
 
 // Read environment variables directly
 $supabaseUrl = $_ENV['SUPABASE_URL'] ?? getenv('SUPABASE_URL') ?? '';
@@ -11,8 +14,8 @@ $supabaseKey = $_ENV['SUPABASE_ANON_KEY'] ?? getenv('SUPABASE_ANON_KEY') ?? '';
 $response = ['success' => false, 'message' => ''];
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    $response['message'] = 'Invalid request method.';
-    jsonResponse($response);
+    echo json_encode(['success' => false, 'message' => 'Invalid request method.']);
+    exit;
 }
 
 // Get JSON input
@@ -23,8 +26,8 @@ $email = filter_var(trim($input['email'] ?? ''), FILTER_VALIDATE_EMAIL);
 $message = htmlspecialchars(trim($input['message'] ?? ''));
 
 if (!$name || !$email || !$message) {
-    $response['message'] = 'Please fill in all fields correctly.';
-    jsonResponse($response);
+    echo json_encode(['success' => false, 'message' => 'Please fill in all fields correctly.']);
+    exit;
 }
 
 // Send to Supabase REST API directly
@@ -49,15 +52,14 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 
 $response = curl_exec($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
 
 if ($httpCode === 201) {
-    jsonResponse([
+    echo json_encode([
         'success' => true,
         'message' => 'Thank you. We will contact you shortly.'
     ]);
 } else {
-    jsonResponse([
+    echo json_encode([
         'success' => false,
         'message' => 'Unable to process your request. Please try again.'
     ]);
